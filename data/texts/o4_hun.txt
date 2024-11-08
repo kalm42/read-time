@@ -1,0 +1,4 @@
+Kérem, vegyen fel egy taxirendelést kora reggelre. Tallósi úr, aki az Irányi utcán lakik, a 
+Ferihegy 2-es terminálon szeretne lenni reggel 6 óra15 perckor. A gépe nem indul 7 óra 50 percig, de 
+megoldást kell találnia a poggyásztúlsúlyra. Jegyezze fel, hogy különleges elsőbbséget élvez, és 
+gondoskodjon a pontosságról. Pontosan 5 óra 30 percre várja az autót.
