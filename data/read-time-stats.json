@@ -1,0 +1,104 @@
+{
+  "CAT": {
+    "mean": 264,
+    "median": 289,
+    "standardDeviation": 30,
+    "locale": "ca"
+  },
+  "CMN": {
+    "mean": 262,
+    "median": 283,
+    "standardDeviation": 30,
+    "locale": "zh"
+  },
+  "DEU": {
+    "mean": 297,
+    "median": 280,
+    "standardDeviation": 61,
+    "locale": "de"
+  },
+  "ENG": {
+    "mean": 238,
+    "median": 226,
+    "standardDeviation": 36,
+    "locale": "en"
+  },
+  "EUS": {
+    "mean": 380,
+    "median": 383,
+    "standardDeviation": 46,
+    "locale": "eu"
+  },
+  "FIN": {
+    "mean": 409,
+    "median": 408,
+    "standardDeviation": 63,
+    "locale": "fi"
+  },
+  "FRA": {
+    "mean": 227,
+    "median": 224,
+    "standardDeviation": 28,
+    "locale": "fr"
+  },
+  "HUN": {
+    "mean": 399,
+    "median": 442,
+    "standardDeviation": 64,
+    "locale": "hu"
+  },
+  "ITA": {
+    "mean": 323,
+    "median": 353,
+    "standardDeviation": 51,
+    "locale": "it"
+  },
+  "JPN": {
+    "mean": 231,
+    "median": 255,
+    "standardDeviation": 24,
+    "locale": "ja"
+  },
+  "KOR": {
+    "mean": 431,
+    "median": 420,
+    "standardDeviation": 54,
+    "locale": "ko"
+  },
+  "SPA": {
+    "mean": 263,
+    "median": 280,
+    "standardDeviation": 33,
+    "locale": "es"
+  },
+  "SRP": {
+    "mean": 297,
+    "median": 318,
+    "standardDeviation": 39,
+    "locale": "sr"
+  },
+  "THA": {
+    "mean": 257,
+    "median": 270,
+    "standardDeviation": 32,
+    "locale": "th"
+  },
+  "TUR": {
+    "mean": 374,
+    "median": 309,
+    "standardDeviation": 46,
+    "locale": "tr"
+  },
+  "VIE": {
+    "mean": 192,
+    "median": 195,
+    "standardDeviation": 24,
+    "locale": "vi"
+  },
+  "YUE": {
+    "mean": 242,
+    "median": 248,
+    "standardDeviation": 20,
+    "locale": "yue"
+  }
+}
