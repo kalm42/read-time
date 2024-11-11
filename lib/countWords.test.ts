@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { countWords } from './countWords.mjs';
+import { countWords } from './countWords.js';
 
 describe('countWords', () => {
 	it('should return word count using wordBound function', () => {
@@ -12,6 +12,7 @@ describe('countWords', () => {
 		const text = 'Hello world!';
 		const language = 'en';
 		// Mock Intl.Segmenter
+		// @ts-ignore - Mocking global object
 		global.Intl.Segmenter = class {
 			constructor(lang, options) {}
 			segment(txt) {
@@ -28,6 +29,7 @@ describe('countWords', () => {
 		const text = 'Hello world !';
 		const language = 'en';
 		// Remove Intl.Segmenter
+		// @ts-ignore - Mocking global object
 		delete global.Intl.Segmenter;
 		expect(countWords(text, language)).toBe(3);
 	});
@@ -39,6 +41,7 @@ describe('countWords', () => {
 
 	it('should return 0 for null text', () => {
 		const text = null;
+		// @ts-expect-error - Testing invalid input
 		expect(countWords(text, 'en')).toBe(0);
 	});
 });

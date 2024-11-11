@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeAll, beforeEach } from 'vitest';
-import getReadTime from './main.mjs';
+import getReadTime from './main';
 import fs from 'fs/promises';
 import path from 'path';
-import speeds from './languageSpeeds.mjs';
+import speeds from './languageSpeeds.js';
 
 describe('getReadTime', () => {
 	it('should return 0 when text is empty', () => {
@@ -50,11 +50,14 @@ describe('getReadTime', () => {
 	});
 
 	it('should throw for null or undefined text', () => {
+		// @ts-expect-error
 		expect(() => getReadTime(null, {})).toThrow();
+		// @ts-expect-error
 		expect(() => getReadTime(undefined, {})).toThrow();
 	});
 
 	it('should throw an error if types are not followed', () => {
+		// @ts-expect-error
 		expect(() => getReadTime(12345, 'options')).toThrow();
 	});
 });

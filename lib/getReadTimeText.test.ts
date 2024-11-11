@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getReadTimeText } from './getReadTimeText.mjs';
+import { getReadTimeText } from './getReadTimeText';
 
 describe('getReadTimeText', () => {
 	it('should return correct translation for English', () => {

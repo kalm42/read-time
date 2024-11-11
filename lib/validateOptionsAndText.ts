@@ -1,12 +1,14 @@
 import { z } from 'zod';
 
-export function validateOptionsAndText(options, text) {
-	const optionsSchema = z.object({
-		standardDeviationOffset: z.number().default(0),
-		language: z.string().default('en'),
-		wordBound: z.function().optional(),
-	});
+const optionsSchema = z.object({
+	standardDeviationOffset: z.number().default(0),
+	language: z.string().default('en'),
+	wordBound: z.function(z.tuple([z.string()]), z.number()).optional(),
+});
 
+export type Options = z.infer<typeof optionsSchema>;
+
+export function validateOptionsAndText(options: unknown, text: unknown) {
 	const parsedOptions = optionsSchema.safeParse(options);
 	if (!parsedOptions.success) {
 		throw new Error('Invalid options');

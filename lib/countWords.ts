@@ -1,6 +1,10 @@
 import { z } from 'zod';
 
-export function countWords(text, language, wordBound) {
+export function countWords(
+	text: string,
+	language: string,
+	wordBound?: (text: string) => number
+): number {
 	if (!z.string().safeParse(text).success || !text) return 0;
 
 	if (wordBound) {

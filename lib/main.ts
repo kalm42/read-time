@@ -1,7 +1,7 @@
-import { calculateTime } from './calculateTime.mjs';
-import { countWords } from './countWords.mjs';
-import { getReadTimeText } from './getReadTimeText.mjs';
-import { validateOptionsAndText } from './validateOptionsAndText.mjs';
+import { calculateTime } from './calculateTime.js';
+import { countWords } from './countWords.js';
+import { getReadTimeText } from './getReadTimeText.js';
+import { Options, validateOptionsAndText } from './validateOptionsAndText.js';
 
 /**
  * Calculates the time to read a given string.
@@ -16,7 +16,7 @@ import { validateOptionsAndText } from './validateOptionsAndText.mjs';
  * @param {Object} options - Options for reading time calculation.
  * @returns {number} Time in seconds.
  */
-function getReadTime(text, options) {
+function getReadTime(text: string, options: Partial<Options> = {}) {
 	const { __options, __text } = validateOptionsAndText(options, text);
 
 	const { standardDeviationOffset, language, wordBound } = __options;

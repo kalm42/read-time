@@ -1,4 +1,11 @@
-const speeds = {
+type Speed = {
+	[key: string]: {
+		mean: number;
+		standardDeviation: number;
+	};
+};
+
+const speeds: Speed = {
 	ca: {
 		mean: 264,
 		standardDeviation: 30,
@@ -40,16 +47,8 @@ const speeds = {
 		standardDeviation: 24,
 	},
 	default: {
-		mean: Math.round(
-			[264, 262, 297, 238, 380, 409, 227, 399, 323, 231].reduce(
-				(a, b) => a + b,
-				0
-			) / [264, 262, 297, 238, 380, 409, 227, 399, 323, 231].length
-		),
-		standardDeviation: Math.round(
-			[30, 30, 61, 36, 46, 63, 28, 64, 51, 24].reduce((a, b) => a + b, 0) /
-				[30, 30, 61, 36, 46, 63, 28, 64, 51, 24].length
-		),
+		mean: 303,
+		standardDeviation: 71,
 	},
 };
 export default speeds;

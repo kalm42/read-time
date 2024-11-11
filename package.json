@@ -5,6 +5,9 @@
 	"files": [
 		"dist"
 	],
+	"type": "module",
+	"emitDeclarationOnly": true,
+	"declaration": true,
 	"main": "./dist/read-time.umd.js",
 	"module": "./dist/read-time.es.js",
 	"exports": {
@@ -15,7 +18,7 @@
 	},
 	"scripts": {
 		"dev": "vite",
-		"build": "vite build",
+		"build": "npx tsc && vite build",
 		"preview": "vite preview",
 		"test": "vitest"
 	},
@@ -30,8 +33,10 @@
 	},
 	"homepage": "https://github.com/kalm42/read-time#readme",
 	"devDependencies": {
+		"@types/node": "^22.9.0",
 		"eslint": "^9.14.0",
 		"eslint-config-prettier": "^9.1.0",
+		"typescript": "^5.6.3",
 		"vite": "^5.4.10",
 		"vitest": "^2.1.4"
 	},

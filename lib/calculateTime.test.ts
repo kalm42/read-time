@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { calculateTime } from './calculateTime.mjs';
-import speeds from './languageSpeeds.mjs';
+import speeds from './languageSpeeds';
+import { calculateTime } from './calculateTime';
 
 describe('calculateTime', () => {
 	it('should calculate time correctly with known language and adjustment', () => {

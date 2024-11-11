@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { validateOptionsAndText } from './validateOptionsAndText.mjs';
+import { validateOptionsAndText } from './validateOptionsAndText';
 
 describe('validateOptionsAndText', () => {
 	it('should return text and options object', () => {
@@ -60,6 +60,7 @@ describe('validateOptionsAndText', () => {
 		};
 		const text = 'Sample text';
 		const result = validateOptionsAndText(options, text);
+		// @ts-expect-error
 		expect(result.__options.extraProp).toBeUndefined();
 	});
 });
