@@ -1,5 +1,5 @@
 {
-	"name": "read-time",
+	"name": "@kalm42/read-time",
 	"version": "0.1.0",
 	"description": "Estimated time to read a given string in a given language.",
 	"files": [
