@@ -14,10 +14,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18.x'
-          registry-url: 'https://npm.pkg.github.com'
-          # Defaults to the user or organization that owns the workflow file
+          registry-url: 'https://registry.npmjs.org'
           scope: '@kalm42'
       - run: npm ci
-      - run: npm publish
+      - run: npm publish --provenance --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
