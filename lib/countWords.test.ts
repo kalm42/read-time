@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { countWords } from './countWords.js';
+import { countWords } from './countWords';
 
 describe('countWords', () => {
 	it('should return word count using wordBound function', () => {

@@ -16,6 +16,6 @@ export function calculateTime(
 
 	const millisecondsPerWord = speedStats.mean + offset;
 
-	const time = wordCount * millisecondsPerWord;
+	const time = Math.round(wordCount * millisecondsPerWord);
 	return time;
 }

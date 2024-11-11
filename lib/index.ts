@@ -1,7 +1,18 @@
-import { calculateTime } from './calculateTime.js';
-import { countWords } from './countWords.js';
-import { getReadTimeText } from './getReadTimeText.js';
-import { Options, validateOptionsAndText } from './validateOptionsAndText.js';
+import { z } from 'zod';
+import { calculateTime } from './calculateTime';
+import { countWords } from './countWords';
+import { getReadTimeText } from './getReadTimeText';
+import { Options, validateOptionsAndText } from './validateOptionsAndText';
+
+export const readTimeResultSchema = z.object({
+	text: z.string(),
+	milliseconds: z.number(),
+	seconds: z.number(),
+	minutes: z.number(),
+	words: z.number(),
+});
+export type ReadTimeResult = z.infer<typeof readTimeResultSchema>;
+export type { Options };
 
 /**
  * Calculates the time to read a given string.
@@ -12,11 +23,11 @@ import { Options, validateOptionsAndText } from './validateOptionsAndText.js';
  *   wordBound: (text: string) => number, optional user can provide a custom function for word boundary detection
  * }
  *
- * @param {string} text - The text to read.
- * @param {Object} options - Options for reading time calculation.
- * @returns {number} Time in seconds.
  */
-function getReadTime(text: string, options: Partial<Options> = {}) {
+export function getReadTime(
+	text: string,
+	options: Partial<Options> = {}
+): ReadTimeResult {
 	const { __options, __text } = validateOptionsAndText(options, text);
 
 	const { standardDeviationOffset, language, wordBound } = __options;
@@ -25,8 +36,8 @@ function getReadTime(text: string, options: Partial<Options> = {}) {
 
 	const milliseconds = calculateTime(words, language, standardDeviationOffset);
 
-	const seconds = Math.floor(milliseconds / 1_000);
-	const minutes = Math.floor(milliseconds / 1_000 / 60);
+	const seconds = Math.round(milliseconds / 1_000);
+	const minutes = Math.round(milliseconds / 1_000 / 60);
 
 	const humanized = getReadTimeText(minutes, language);
 
@@ -38,5 +49,3 @@ function getReadTime(text: string, options: Partial<Options> = {}) {
 		words,
 	};
 }
-
-export default getReadTime;
