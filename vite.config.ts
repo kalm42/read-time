@@ -8,8 +8,9 @@ export default defineConfig({
 		lib: {
 			entry: path.resolve(__dirname, 'lib/index.ts'),
 			name: 'read-time',
-			formats: ['es', 'umd'],
-			fileName: (format) => `read-time.${format}.js`,
+			formats: ['es', 'cjs', 'umd'],
+			fileName: (format) =>
+				format === 'cjs' ? `read-time.${format}` : `read-time.${format}.js`,
 		},
 	},
 	plugins: [
